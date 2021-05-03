@@ -10,8 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.5.1",
     "react": "17.0.1",
-    "react-native": "0.64.0"
+    "react-native": "0.64.0",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "reselect": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

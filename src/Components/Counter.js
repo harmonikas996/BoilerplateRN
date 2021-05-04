@@ -2,16 +2,17 @@ import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {View, Text, Button, TextInput} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectCounterValue} from '../Store/Selectors/CounterSelectors';
 import {
-  decrement,
-  increment,
-  incrementByAmount,
-} from '../Store/Slices/CounterSlice';
+  selectCounterIsAdding,
+  selectCounterValue,
+} from '../Store/Selectors/Counter';
+import {decrement, increment} from '../Store/Slices/Counter';
+import {delayedIncrementSagaAction} from '../Store/Saga/Actions/Counter';
 
 const Counter = ({color}) => {
   const [amount, setAmount] = useState('');
   const value = useSelector(selectCounterValue);
+  const isAdding = useSelector(selectCounterIsAdding);
 
   const dispatch = useDispatch();
 
@@ -28,8 +29,9 @@ const Counter = ({color}) => {
           keyboardType="numeric"
         />
         <Button
-          onPress={() => dispatch(incrementByAmount(+amount))}
-          title="ADD"
+          onPress={() => dispatch(delayedIncrementSagaAction(+amount))}
+          title={isAdding ? 'Adding...' : 'ADD'}
+          disabled={isAdding}
         />
       </View>
     </View>

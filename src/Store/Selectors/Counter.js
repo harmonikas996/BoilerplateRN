@@ -6,3 +6,8 @@ export const selectCounterValue = createSelector(
   couterSlice,
   state => state.value,
 );
+
+export const selectCounterIsAdding = createSelector(
+  couterSlice,
+  state => state.isAdding,
+);

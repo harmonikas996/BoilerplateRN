@@ -1,5 +1,3 @@
 import {createAction} from '@reduxjs/toolkit';
 
-export const delayedIncrementSagaAction = createAction(
-  'counter/delayedIncrementSagaAction',
-);
+export const delayedIncrement = createAction('counter/delayedIncrement');

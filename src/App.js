@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
 import {
   SafeAreaView,
   StatusBar,
@@ -6,17 +7,19 @@ import {
   useColorScheme,
 } from 'react-native';
 import {Provider} from 'react-redux';
-import Counter from './Components/Counter';
 import {store} from './Store';
+import AppNavigator from './Navigation/AppNavigator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.container}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <Counter color={'red'} />
+      <SafeAreaView style={[StyleSheet.absoluteFill, styles.container]}>
+        <NavigationContainer>
+          <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+          <AppNavigator />
+        </NavigationContainer>
       </SafeAreaView>
     </Provider>
   );

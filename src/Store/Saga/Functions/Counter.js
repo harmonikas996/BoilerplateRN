@@ -1,6 +1,6 @@
 import {delay, put, takeEvery} from '@redux-saga/core/effects';
 import {incrementByAmount, setIsAdding} from '../../Slices/Counter';
-import {delayedIncrementSagaAction} from '../Actions/Counter';
+import {delayedIncrement} from '../Actions/Counter';
 
 export function* delayedIncrementSaga({payload}) {
   try {
@@ -14,6 +14,4 @@ export function* delayedIncrementSaga({payload}) {
   }
 }
 
-export const counterSagas = [
-  takeEvery(delayedIncrementSagaAction, delayedIncrementSaga),
-];
+export const counterSagas = [takeEvery(delayedIncrement, delayedIncrementSaga)];

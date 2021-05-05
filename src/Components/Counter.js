@@ -7,9 +7,9 @@ import {
   selectCounterValue,
 } from '../Store/Selectors/Counter';
 import {decrement, increment} from '../Store/Slices/Counter';
-import {delayedIncrementSagaAction} from '../Store/Saga/Actions/Counter';
+import {delayedIncrement} from '../Store/Saga/Actions/Counter';
 
-const Counter = ({color}) => {
+const Counter = ({color = 'black'}) => {
   const [amount, setAmount] = useState('');
   const value = useSelector(selectCounterValue);
   const isAdding = useSelector(selectCounterIsAdding);
@@ -29,7 +29,7 @@ const Counter = ({color}) => {
           keyboardType="numeric"
         />
         <Button
-          onPress={() => dispatch(delayedIncrementSagaAction(+amount))}
+          onPress={() => dispatch(delayedIncrement(+amount))}
           title={isAdding ? 'Adding...' : 'ADD'}
           disabled={isAdding}
         />

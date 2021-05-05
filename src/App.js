@@ -9,13 +9,14 @@ import {
 import {Provider} from 'react-redux';
 import {store} from './Store';
 import AppNavigator from './Navigation/AppNavigator';
+import Layout from './Style/Layout';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
     <Provider store={store}>
-      <SafeAreaView style={[StyleSheet.absoluteFill, styles.container]}>
+      <SafeAreaView style={[Layout.fill, styles.container]}>
         <NavigationContainer>
           <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
           <AppNavigator />

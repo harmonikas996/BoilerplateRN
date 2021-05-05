@@ -10,12 +10,25 @@
  */
 export const Colors = {
   transparent: 'rgba(0,0,0,0)',
-  inputBackground: '#FFFFFF',
   white: '#ffffff',
   text: '#212529',
-  primary: '#E14032',
   success: '#28a745',
   error: '#dc3545',
+  input: {
+    normal: {
+      text: '#212529',
+      background: '#ffffff',
+      border: '#cccccc',
+    },
+    focused: {
+      text: '#212529',
+      background: '#eeeeee',
+      border: '#cccccc',
+    },
+    placeholder: '#666666',
+    valid: '#28a745',
+    invalid: '#dc3545',
+  },
 };
 
 /**

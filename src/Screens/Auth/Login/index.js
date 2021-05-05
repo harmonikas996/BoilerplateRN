@@ -1,32 +1,15 @@
-import React, {useState} from 'react';
-import {Button, TextInput, View} from 'react-native';
+import React from 'react';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {useDispatch} from 'react-redux';
+import {LoginForm} from '../../../Components/Auth/LoginForm';
 import {login} from '../../../Store/Saga/Actions/User';
 
 const LoginScreen = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
   const dispatch = useDispatch();
-
   return (
-    <View>
-      <TextInput
-        placeholder="Username"
-        value={username}
-        onChangeText={setUsername}
-      />
-      <TextInput
-        placeholder="Password"
-        value={password}
-        onChangeText={setPassword}
-        secureTextEntry
-      />
-      <Button
-        title="Login"
-        onPress={() => dispatch(login({username, password}))}
-      />
-    </View>
+    <SafeAreaView>
+      <LoginForm onSubmit={data => dispatch(login(data))} />
+    </SafeAreaView>
   );
 };
 

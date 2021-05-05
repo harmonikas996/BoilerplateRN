@@ -6,7 +6,10 @@ const Stack = createStackNavigator();
 
 const MainNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Stack.Screen name="MainTabs" component={MainTabs} />
     </Stack.Navigator>
   );

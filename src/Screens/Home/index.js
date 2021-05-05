@@ -1,11 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
 import Counter from '../../Components/Counter';
-import Layout from '../../Style/Layout';
+import FocusAwareStatusBar from '../../Components/Shared/FocusAwareStatusBar';
 
 const HomeScreen = () => {
   return (
-    <View style={[Layout.fill, Layout.justifyContentCenter]}>
+    <View>
+      <FocusAwareStatusBar barStyle="light-content" backgroundColor="#2196F3" />
       <Counter color="red" />
     </View>
   );

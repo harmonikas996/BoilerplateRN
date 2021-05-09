@@ -14,6 +14,7 @@ export const Colors = {
   text: '#212529',
   success: '#28a745',
   error: '#dc3545',
+  primary: '#2196f3',
   input: {
     normal: {
       text: '#212529',

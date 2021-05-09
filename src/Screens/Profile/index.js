@@ -1,10 +1,11 @@
 import React from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {logout} from '../../Store/Saga/Actions/User';
 import {selectUser} from '../../Store/Selectors/User';
 import Layout from '../../Style/Layout';
 import FocusAwareStatusBar from '../../Components/Shared/FocusAwareStatusBar';
+import CustomText from '../../Components/Shared/CustomText';
 
 const ProfileScreen = () => {
   const {username} = useSelector(selectUser);
@@ -17,7 +18,7 @@ const ProfileScreen = () => {
         barStyle="dark-content"
         backgroundColor="rgb(242, 242, 242)"
       />
-      <Text>You're logged in as {username}</Text>
+      <CustomText>You're logged in as {username}</CustomText>
       <Button title="Logout" onPress={() => dispatch(logout())} />
     </View>
   );

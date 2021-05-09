@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import {useSelector} from 'react-redux';
 import FullScreenLoader from '../Components/Shared/FullScreenLoader';
 import {selectUserIsLoading, selectUserToken} from '../Store/Selectors/User';

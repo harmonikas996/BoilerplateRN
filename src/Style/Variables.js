@@ -36,9 +36,9 @@ export const Colors = {
  * FontSize
  */
 export const FontSize = {
-  small: 16,
-  regular: 20,
-  large: 40,
+  small: 12,
+  regular: 14,
+  large: 24,
 };
 
 /**
